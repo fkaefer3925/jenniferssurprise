@@ -928,7 +928,7 @@ const MOVIES = [
   { title: "Minority Report",           search: "Minority Report 2002",       rating: "8,5/10" },
 ];
 
-const TMDB_KEY = "2dca580c2a14b55200e784d157207b4d";
+const TMDB_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YTA0NmJlMzU1MmY4YWViMzRhZDgwNzA0ZWJiYWVlNiIsIm5iZiI6MTc4MTIzMzM5OC4xNCwic3ViIjoiNmEyYjc2ZjY1OTMwY2E0MmUxZTNiOWQ5Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.cLhwDKy0RAr2s1e-cR8AAzqB7FmBt_92YC1kynbSTLo";
 const IMG_BASE = "https://image.tmdb.org/t/p/w342";
 
 const grid = document.getElementById("movies-grid");
@@ -946,7 +946,9 @@ MOVIES.forEach(movie => {
     </div>`;
   grid.appendChild(card);
 
-  fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(movie.search)}&language=pt-BR`)
+  fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(movie.search)}&language=pt-BR`, {
+    headers: { Authorization: `Bearer ${TMDB_TOKEN}` }
+  })
     .then(r => r.json())
     .then(data => {
       const poster = data.results?.[0]?.poster_path;
