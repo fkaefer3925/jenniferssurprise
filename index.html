@@ -901,31 +901,31 @@
 
 <script>
 const MOVIES = [
-  { title: "Twister",                   search: "Twister 1996",              rating: "8,5/10" },
-  { title: "Bee Movie",                 search: "Bee Movie 2007",             rating: "7/10"   },
-  { title: "Truque de Mestre",          search: "Now You See Me 2013",        rating: "9,5/10" },
-  { title: "Truque de Mestre 2",        search: "Now You See Me 2 2016",      rating: "8/10"   },
-  { title: "Truque de Mestre 3",        search: "Now You See Me 3 2025",      rating: "7/10"   },
-  { title: "Running Man",               search: "The Running Man 1987",       rating: "8/10"   },
-  { title: "Jogos Vorazes",             search: "The Hunger Games 2012",      rating: "8/10"   },
-  { title: "Jerry Maguire",             search: "Jerry Maguire 1996",         rating: "9/10"   },
-  { title: "Pisque Duas Vezes",         search: "Blink Twice 2024",           rating: "8/10"   },
-  { title: "O Aprendiz de Feiticeiro",  search: "The Sorcerer's Apprentice 2010", rating: "8,5/10" },
-  { title: "O Menu",                    search: "The Menu 2022",              rating: "9/10"   },
-  { title: "Sem Limites",               search: "Limitless 2011",             rating: "9/10"   },
-  { title: "Um Lugar Silencioso",       search: "A Quiet Place 2018",         rating: "9/10"   },
-  { title: "Um Lugar Silencioso II",    search: "A Quiet Place Part II 2021", rating: "8,5/10" },
-  { title: "Querido John",              search: "Dear John 2010",             rating: "9,5/10" },
-  { title: "Uma Segunda Chance",        search: "The Longest Ride 2015",      rating: "9/10"   },
-  { title: "Simplesmente Acontece",     search: "The Spectacular Now 2013",   rating: "9/10"   },
-  { title: "Zathura",                   search: "Zathura A Space Adventure 2005", rating: "10/10" },
-  { title: "Ela é o Cara",              search: "She's the Man 2006",         rating: "8/10"   },
-  { title: "Ela Dança eu Danço",        search: "Save the Last Dance 2001",   rating: "9/10"   },
-  { title: "É o Fim",                   search: "This Is the End 2013",       rating: "8/10"   },
-  { title: "Os Novatos",                search: "The Internship 2013",        rating: "9/10"   },
-  { title: "Lego: Batman",              search: "The Lego Batman Movie 2017", rating: "10/10"  },
-  { title: "Palmer",                    search: "Palmer 2021",                rating: "8,5/10" },
-  { title: "Minority Report",           search: "Minority Report 2002",       rating: "8,5/10" },
+  { title: "Twister",                   search: "Twister",              year: 1996, rating: "8,5/10" },
+  { title: "Bee Movie",                 search: "Bee Movie",             year: 2007, rating: "7/10"   },
+  { title: "Truque de Mestre",          search: "Now You See Me",        year: 2013, rating: "9,5/10" },
+  { title: "Truque de Mestre 2",        search: "Now You See Me 2",      year: 2016, rating: "8/10"   },
+  { title: "Truque de Mestre 3",        search: "Now You See Me 3",      year: 2025, rating: "7/10"   },
+  { title: "Running Man",               search: "The Running Man",       year: 1987, rating: "8/10"   },
+  { title: "Jogos Vorazes",             search: "The Hunger Games",      year: 2012, rating: "8/10"   },
+  { title: "Jerry Maguire",             search: "Jerry Maguire",         year: 1996, rating: "9/10"   },
+  { title: "Pisque Duas Vezes",         search: "Blink Twice",           year: 2024, rating: "8/10"   },
+  { title: "O Aprendiz de Feiticeiro",  search: "The Sorcerer's Apprentice", year: 2010, rating: "8,5/10" },
+  { title: "O Menu",                    search: "The Menu",              year: 2022, rating: "9/10"   },
+  { title: "Sem Limites",               search: "Limitless",             year: 2011, rating: "9/10"   },
+  { title: "Um Lugar Silencioso",       search: "A Quiet Place",         year: 2018, rating: "9/10"   },
+  { title: "Um Lugar Silencioso II",    search: "A Quiet Place Part II", year: 2021, rating: "8,5/10" },
+  { title: "Querido John",              search: "Dear John",             year: 2010, rating: "9,5/10" },
+  { title: "Uma Segunda Chance",        search: "The Longest Ride",      year: 2015, rating: "9/10"   },
+  { title: "Simplesmente Acontece",     search: "The Spectacular Now",   year: 2013, rating: "9/10"   },
+  { title: "Zathura",                   search: "Zathura A Space Adventure", year: 2005, rating: "10/10" },
+  { title: "Ela é o Cara",              search: "She's the Man",         year: 2006, rating: "8/10"   },
+  { title: "Ela Dança eu Danço",        search: "Save the Last Dance",   year: 2001, rating: "9/10"   },
+  { title: "É o Fim",                   search: "This Is the End",       year: 2013, rating: "8/10"   },
+  { title: "Os Novatos",                search: "The Internship",        year: 2013, rating: "9/10"   },
+  { title: "Lego: Batman",              search: "The Lego Batman Movie", year: 2017, rating: "10/10"  },
+  { title: "Palmer",                    search: "Palmer",                year: 2021, rating: "8,5/10" },
+  { title: "Minority Report",           search: "Minority Report",       year: 2002, rating: "8,5/10" },
 ];
 
 const TMDB_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YTA0NmJlMzU1MmY4YWViMzRhZDgwNzA0ZWJiYWVlNiIsIm5iZiI6MTc4MTIzMzM5OC4xNCwic3ViIjoiNmEyYjc2ZjY1OTMwY2E0MmUxZTNiOWQ5Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.cLhwDKy0RAr2s1e-cR8AAzqB7FmBt_92YC1kynbSTLo";
@@ -946,19 +946,33 @@ MOVIES.forEach(movie => {
     </div>`;
   grid.appendChild(card);
 
-  fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(movie.search)}&language=pt-BR`, {
+  function applyPoster(data) {
+    const poster = data.results?.[0]?.poster_path;
+    if (poster) {
+      const posterDiv = card.querySelector(".movie-poster");
+      const img = document.createElement("img");
+      img.src = IMG_BASE + poster;
+      img.alt = movie.title;
+      img.loading = "lazy";
+      posterDiv.appendChild(img);
+      return true;
+    }
+    return false;
+  }
+
+  fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(movie.search)}&primary_release_year=${movie.year}&language=pt-BR`, {
     headers: { Authorization: `Bearer ${TMDB_TOKEN}` }
   })
     .then(r => r.json())
     .then(data => {
-      const poster = data.results?.[0]?.poster_path;
-      if (poster) {
-        const posterDiv = card.querySelector(".movie-poster");
-        const img = document.createElement("img");
-        img.src = IMG_BASE + poster;
-        img.alt = movie.title;
-        img.loading = "lazy";
-        posterDiv.appendChild(img);
+      if (!applyPoster(data)) {
+        // Fallback: search without the year restriction
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(movie.search)}&language=pt-BR`, {
+          headers: { Authorization: `Bearer ${TMDB_TOKEN}` }
+        })
+          .then(r => r.json())
+          .then(applyPoster)
+          .catch(() => {});
       }
     })
     .catch(() => {});
