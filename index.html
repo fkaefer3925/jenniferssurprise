@@ -6,7 +6,7 @@
 <title>Para você, Jennifer ♡</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -186,45 +186,94 @@
     padding-top: 1rem;
   }
 
-  /* ── PHOTOS ── */
-  .photos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1rem;
-  }
+  .message-card.has-photo-right,
+  .message-card.has-photo-left { padding-right: 16rem; }
 
-  .photo-slot {
-    aspect-ratio: 4/3;
-    border-radius: 16px;
-    overflow: hidden;
-    background: var(--rose-100);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 8px;
-    color: var(--text-light);
-    font-size: 13px;
-    border: 2px dashed var(--rose-200);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
-    position: relative;
-    z-index: 0;
-  }
-
-  .photo-slot:hover {
-    transform: scale(1.08);
-    box-shadow: 0 12px 40px rgba(142, 0, 56, 0.2);
+  .message-photo {
+    position: absolute;
+    bottom: 1.5rem;
+    width: 200px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid var(--white);
+    box-shadow: 0 10px 28px rgba(142, 0, 56, 0.2);
     z-index: 2;
+    transition: transform 0.3s ease;
   }
 
-  .photo-slot img {
+  .message-photo.right,
+  .message-photo.left { right: 1.75rem; left: auto; transform: rotate(6deg); }
+
+  .message-photo.right:hover,
+  .message-photo.left:hover { transform: rotate(0deg) scale(1.06); z-index: 3; }
+
+  @media (max-width: 600px) {
+    .message-card.has-photo-right,
+    .message-card.has-photo-left { padding-right: 1.5rem; padding-bottom: 11rem; }
+    .message-photo { width: 150px; bottom: 1rem; right: 1.25rem; }
+  }
+
+  /* ── POLAROID PHOTOS ── */
+  .polaroid-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 0.5rem;
+    padding: 2rem 0.5rem 3rem;
+  }
+
+  .polaroid {
+    background: #fffdfb;
+    padding: 14px 14px 16px;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(142, 0, 56, 0.14), 0 2px 6px rgba(142, 0, 56, 0.08);
+    width: 230px;
+    cursor: pointer;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, z-index 0s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .polaroid:hover {
+    transform: rotate(0deg) scale(1.12) translateY(-6px) !important;
+    box-shadow: 0 22px 50px rgba(142, 0, 56, 0.28);
+    z-index: 50;
+  }
+
+  .polaroid img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4/3;
     object-fit: cover;
     display: block;
+    border-radius: 2px;
   }
 
-  .photo-slot svg { width: 32px; height: 32px; opacity: 0.5; }
+  .polaroid-caption {
+    font-family: 'Caveat', cursive;
+    font-size: 1.15rem;
+    color: var(--text-mid);
+    text-align: center;
+    line-height: 1.3;
+    padding: 0.6rem 0.3rem 0.1rem;
+  }
+
+  /* scattered rotation + offset, repeats every 10 */
+  .polaroid:nth-child(1)  { transform: rotate(-6deg)  translateY(8px); }
+  .polaroid:nth-child(2)  { transform: rotate(4deg)   translateY(-10px); }
+  .polaroid:nth-child(3)  { transform: rotate(-3deg)  translateY(14px); }
+  .polaroid:nth-child(4)  { transform: rotate(7deg)   translateY(0px); }
+  .polaroid:nth-child(5)  { transform: rotate(-8deg)  translateY(-6px); }
+  .polaroid:nth-child(6)  { transform: rotate(5deg)   translateY(10px); }
+  .polaroid:nth-child(7)  { transform: rotate(-4deg)  translateY(-12px); }
+  .polaroid:nth-child(8)  { transform: rotate(8deg)   translateY(6px); }
+  .polaroid:nth-child(9)  { transform: rotate(-7deg)  translateY(0px); }
+  .polaroid:nth-child(10) { transform: rotate(3deg)   translateY(-8px); }
+
+  @media (max-width: 600px) {
+    .polaroid { width: 42vw; }
+    .polaroid-caption { font-size: 1rem; }
+  }
 
   /* ── MUSIC PLAYER ── */
   .music-list { display: flex; flex-direction: column; gap: 1.25rem; }
@@ -475,7 +524,6 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
     .message-card { padding: 2rem 1.5rem; }
-    .photos-grid { grid-template-columns: 1fr 1fr; }
     .movies-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
@@ -658,7 +706,7 @@
 
   #lightbox-close:hover { background: rgba(255,255,255,0.25); }
 
-  .photo-slot { cursor: pointer; }
+  .polaroid { cursor: pointer; }
 </style>
 </head>
 <body>
@@ -705,36 +753,46 @@
     <h2 class="section-title">Nossos momentos</h2>
     <div class="section-divider"></div>
 
-    <div class="photos-grid">
-      <div class="photo-slot">
+    <div class="polaroid-wall">
+      <div class="polaroid">
         <img src="foto1.jpeg" alt="Foto 1">
+        <p class="polaroid-caption">Incrivelmente é a única foto neste site em que está sorrindo.</p>
       </div>
-      <div class="photo-slot">
+      <div class="polaroid">
         <img src="foto2.jpeg" alt="Foto 2">
+        <p class="polaroid-caption">Nossa primeira NFL no Hard Rock Cafe.</p>
       </div>
-      <div class="photo-slot">
+      <div class="polaroid">
         <img src="foto3.jpeg" alt="Foto 3">
+        <p class="polaroid-caption">Aquela voltinha no shopping pra perder no "Caiu, Perdeu".</p>
       </div>
-      <div class="photo-slot">
+      <div class="polaroid">
         <img src="foto4.jpeg" alt="Foto 4">
+        <p class="polaroid-caption">Primeira vez que fomos à igreja juntos.</p>
       </div>
-      <div class="photo-slot">
+      <div class="polaroid">
         <img src="foto5.jpeg" alt="Foto 5">
+        <p class="polaroid-caption">Um dos melhores passatempos contigo.</p>
       </div>
-      <div class="photo-slot">
+      <div class="polaroid">
         <img src="foto6.jpeg" alt="Foto 6">
+        <p class="polaroid-caption">Primeira vez nossa na sala VIP do cinema.</p>
       </div>
-      <div class="photo-slot">
+      <div class="polaroid">
         <img src="foto7.jpeg" alt="Foto 7">
+        <p class="polaroid-caption">Dia anterior ao nosso primeiro Dia dos Namorados, conheceu meu chefe e meus tios.</p>
       </div>
-      <div class="photo-slot">
+      <div class="polaroid">
         <img src="foto8.jpeg" alt="Foto 8">
+        <p class="polaroid-caption">Nosso primeiro encontro oficial &lt;3</p>
       </div>
-      <div class="photo-slot">
+      <div class="polaroid">
         <img src="foto9.jpeg" alt="Foto 9">
+        <p class="polaroid-caption">Eu tentando entender como sua cabeça pode ser tão grande.</p>
       </div>
-      <div class="photo-slot">
+      <div class="polaroid">
         <img src="foto10.jpeg" alt="Foto 10">
+        <p class="polaroid-caption">"Eu nunca vou conseguir falar o que sinto por você."</p>
       </div>
     </div>
   </div>
@@ -743,8 +801,9 @@
 
 <!-- ✦ MENSAGEM 1 ✦ -->
 <section class="messages-section">
-  <div class="message-card">
+  <div class="message-card has-photo-right">
     <p class="message-text">Jennifer, obrigado por desde que chegou, ter deixado a minha vida com muito mais sentido e empolgante. Acredito que nos conhecemos há pouco tempo, mas a sensação que tenho é que fazem décadas. Nossa conexão é muito especial, e eu gostaria que soubesse disso.</p>
+    <img src="foto11.jpeg" alt="" class="message-photo right">
   </div>
 </section>
 
@@ -883,8 +942,9 @@
 
 <!-- ✦ MENSAGEM 2 ✦ -->
 <section class="messages-section">
-  <div class="message-card">
+  <div class="message-card has-photo-right">
     <p class="message-text">Obrigado por todos os momentos, todas as risadas altas, os roncos e qualquer outra coisa que tenha escolhido dividir comigo, é realmente um privilégio dividir a vida contigo.</p>
+    <img src="foto12.jpeg" alt="" class="message-photo right">
   </div>
 </section>
 
@@ -894,6 +954,7 @@
   <div style="max-width: 900px; margin: 0 auto;">
     <p class="section-label">Sessão de cinema</p>
     <h2 class="section-title">Nossos filmes</h2>
+    <p style="font-size: 0.8rem; color: var(--text-light); font-style: italic; margin-top: -2.5rem; margin-bottom: 2.5rem;">cadê o Crepúsculo daqui? 👀</p>
     <div class="section-divider"></div>
     <div class="movies-grid" id="movies-grid"></div>
   </div>
@@ -1021,7 +1082,7 @@ MOVIES.forEach(movie => {
   document.getElementById('days-count').textContent = days;
 
   /* ── LIGHTBOX ── */
-  document.querySelectorAll('.photo-slot').forEach(slot => {
+  document.querySelectorAll('.polaroid').forEach(slot => {
     slot.addEventListener('click', () => {
       const img = slot.querySelector('img');
       if (!img) return;
