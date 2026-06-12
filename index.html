@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para você, Jennifer ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rose-50: #fff0f3;
+    --rose-100: #ffd6e0;
+    --rose-200: #ffb3c6;
+    --rose-400: #ff6b95;
+    --rose-500: #e63976;
+    --rose-600: #c2185b;
+    --rose-700: #8e0038;
+    --blush-bg: #fff7f9;
+    --text-dark: #2d1520;
+    --text-mid: #7a3d55;
+    --text-light: #b06080;
+    --white: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--blush-bg);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    background: linear-gradient(160deg, #fff0f3 0%, #ffd6e0 50%, #ffb3c6 100%);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: rgba(255, 107, 149, 0.12);
+    top: -200px; right: -200px;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255, 179, 198, 0.15);
+    bottom: -150px; left: -100px;
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose-600);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 400;
+    color: var(--rose-700);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--rose-500);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-mid);
+    max-width: 420px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-light);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-hint svg { width: 20px; height: 20px; }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 5rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose-500);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: var(--rose-700);
+    margin-bottom: 3rem;
+    line-height: 1.2;
+  }
+
+  .section-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--rose-400);
+    margin: 1rem 0 3rem;
+    border-radius: 2px;
+  }
+
+  /* ── MESSAGES ── */
+  .messages-section { background: transparent; }
+
+  .message-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--rose-400);
+    box-shadow: 0 4px 24px rgba(230, 57, 118, 0.08);
+    position: relative;
+  }
+
+  .message-card::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--rose-200);
+    position: absolute;
+    top: 0.5rem;
+    left: 1.5rem;
+    line-height: 1;
+  }
+
+  .message-text {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    font-weight: 300;
+    line-height: 1.85;
+    padding-top: 1rem;
+  }
+
+  /* ── PHOTOS ── */
+  .photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .photo-slot {
+    aspect-ratio: 4/3;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--rose-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 13px;
+    border: 2px dashed var(--rose-200);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+    position: relative;
+    z-index: 0;
+  }
+
+  .photo-slot:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 40px rgba(142, 0, 56, 0.2);
+    z-index: 2;
+  }
+
+  .photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-slot svg { width: 32px; height: 32px; opacity: 0.5; }
+
+  /* ── MUSIC PLAYER ── */
+  .music-list { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .player-card {
+    background: #1a0a10;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  }
+
+  .player-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .player-cover {
+    width: 52px; height: 52px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--rose-400), var(--rose-700));
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+  }
+
+  .player-meta { flex: 1; min-width: 0; }
+
+  .player-title {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .player-artist {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+
+  .player-heart {
+    color: var(--rose-400);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .player-lyric {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+    line-height: 1.6;
+    padding: 0 0.25rem;
+  }
+
+  .player-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .player-time {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .player-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .player-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--rose-400);
+  }
+
+  .player-bar-dot {
+    width: 10px; height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+  }
+
+  .player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .ctrl-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: rgba(255,255,255,0.5);
+    display: flex; align-items: center; justify-content: center;
+    transition: color 0.2s;
+  }
+
+  .ctrl-btn:hover { color: #fff; }
+
+  .ctrl-btn.play {
+    width: 38px; height: 38px;
+    background: #fff;
+    border-radius: 50%;
+    color: #1a0a10;
+  }
+
+  .ctrl-btn.play:hover { background: var(--rose-100); }
+
+  .player-rank {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.3);
+    text-align: right;
+    padding: 0 0.25rem;
+  }
+
+  /* ── MOVIES ── */
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .movie-card {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(230, 57, 118, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .movie-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(230, 57, 118, 0.12);
+  }
+
+  .movie-poster {
+    aspect-ratio: 2/3;
+    background: linear-gradient(135deg, var(--rose-100), var(--rose-200));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--text-light);
+    font-size: 11px;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .movie-poster img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .movie-poster svg { width: 28px; height: 28px; opacity: 0.5; }
+
+  .movie-info {
+    padding: 0.6rem 0.75rem 0.75rem;
+  }
+
+  .movie-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.3;
+  }
+
+  .movie-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin-top: 5px;
+    background: var(--rose-50);
+    border: 1px solid var(--rose-200);
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--rose-600);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 4rem 2rem 5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--text-mid);
+  }
+
+  footer span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rose-400);
+    margin-top: 0.75rem;
+  }
+
+  /* ── FLOATERS ── */
+  .petal {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0%   { transform: translateY(-40px) rotate(0deg); opacity: 0; }
+    5%   { opacity: 0.6; }
+    95%  { opacity: 0.3; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .message-card { padding: 2rem 1.5rem; }
+    .photos-grid { grid-template-columns: 1fr 1fr; }
+    .movies-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ── PASSWORD SCREEN ── */
+  #password-screen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(160deg, #fff0f3 0%, #ffd6e0 50%, #ffb3c6 100%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+
+  #password-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .lock-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  .password-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    color: var(--rose-700);
+    margin-bottom: 0.5rem;
+  }
+
+  .password-sub {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .password-input-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  #password-input {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border: 2px solid var(--rose-200);
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-align: center;
+    letter-spacing: 0.3em;
+    color: var(--text-dark);
+    background: rgba(255,255,255,0.8);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  #password-input:focus { border-color: var(--rose-400); }
+
+  #password-input.error {
+    border-color: #e24b4a;
+    animation: shake 0.4s ease;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+  }
+
+  .password-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--rose-500);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .password-btn:hover { background: var(--rose-600); }
+  .password-btn:active { transform: scale(0.97); }
+
+  .password-hint {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+  }
+
+  /* ── COUNTER ── */
+  .counter-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(194, 24, 91, 0.2);
+    border-radius: 50px;
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(4px);
+  }
+
+  .counter-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--rose-600);
+    font-weight: 500;
+  }
+
+  .counter-label {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── LIGHTBOX ── */
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 5, 12, 0.92);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 1.5rem;
+  }
+
+  #lightbox.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #lightbox img {
+    max-width: 90vw;
+    max-height: 88vh;
+    border-radius: 12px;
+    object-fit: contain;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    transform: scale(0.92);
+    transition: transform 0.3s ease;
+  }
+
+  #lightbox.open img { transform: scale(1); }
+
+  #lightbox-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: #fff;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+
+  #lightbox-close:hover { background: rgba(255,255,255,0.25); }
+
+  .photo-slot { cursor: pointer; }
+</style>
+</head>
+<body>
+
+<!-- ✦ TELA DE SENHA ✦ -->
+<div id="password-screen">
+  <div class="lock-icon">🔒</div>
+  <h1 class="password-title">Esta página é só sua</h1>
+  <p class="password-sub">Digite a senha para abrir o seu presente</p>
+  <div class="password-input-wrap">
+    <input type="password" id="password-input" placeholder="••••••••" maxlength="20" autocomplete="off">
+    <button class="password-btn" onclick="checkPassword()">Abrir ♡</button>
+    <p class="password-hint">Você sabe a senha 😊</p>
+  </div>
+</div>
+
+<!-- ✦ LIGHTBOX ✦ -->
+<div id="lightbox" onclick="closeLightbox()">
+  <button id="lightbox-close" aria-label="Fechar">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ✦ HERO ✦ -->
+<div class="hero">
+  <p class="hero-eyebrow">Feliz Dia dos Namorados</p>
+  <h1>Jennifer<br><em>Pontes</em></h1>
+  <div class="counter-box">
+    <span class="counter-number" id="days-count">0</span>
+    <span class="counter-label">dias ao lado de você ♡</span>
+  </div>
+  <p class="hero-sub">Tem coisas aqui guardadas especialmente pra você.</p>
+
+  <div class="scroll-hint">
+    <span>role pra baixo</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</div>
+
+
+<!-- ✦ FOTOS ✦ -->
+<section style="background: #fff2f5; border-radius: 32px; max-width: 100%; padding: 5rem 1.5rem;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <p class="section-label">Nós dois</p>
+    <h2 class="section-title">Nossos momentos</h2>
+    <div class="section-divider"></div>
+
+    <div class="photos-grid">
+      <div class="photo-slot">
+        <img src="foto1.jpeg" alt="Foto 1">
+      </div>
+      <div class="photo-slot">
+        <img src="foto2.jpeg" alt="Foto 2">
+      </div>
+      <div class="photo-slot">
+        <img src="foto3.jpeg" alt="Foto 3">
+      </div>
+      <div class="photo-slot">
+        <img src="foto4.jpeg" alt="Foto 4">
+      </div>
+      <div class="photo-slot">
+        <img src="foto5.jpeg" alt="Foto 5">
+      </div>
+      <div class="photo-slot">
+        <img src="foto6.jpeg" alt="Foto 6">
+      </div>
+      <div class="photo-slot">
+        <img src="foto7.jpeg" alt="Foto 7">
+      </div>
+      <div class="photo-slot">
+        <img src="foto8.jpeg" alt="Foto 8">
+      </div>
+      <div class="photo-slot">
+        <img src="foto9.jpeg" alt="Foto 9">
+      </div>
+      <div class="photo-slot">
+        <img src="foto10.jpeg" alt="Foto 10">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ✦ MENSAGEM 1 ✦ -->
+<section class="messages-section">
+  <div class="message-card">
+    <p class="message-text">Jennifer, obrigado por desde que chegou, ter deixado a minha vida com muito mais sentido e empolgante. Acredito que nos conhecemos há pouco tempo, mas a sensação que tenho é que fazem décadas. Nossa conexão é muito especial, e eu gostaria que soubesse disso.</p>
+  </div>
+</section>
+
+
+<!-- ✦ MÚSICAS ✦ -->
+<section>
+  <p class="section-label">Trilha sonora</p>
+  <h2 class="section-title">Nossas músicas</h2>
+  <div class="section-divider"></div>
+
+  <div class="music-list">
+
+    <!-- 1 -->
+    <div class="player-card">
+      <div class="player-top">
+        <div class="player-cover">♪</div>
+        <div class="player-meta">
+          <p class="player-title">Me Encontra</p>
+          <p class="player-artist">Charlie Brown Jr</p>
+        </div>
+        <span class="player-heart">♥</span>
+      </div>
+      <p class="player-lyric">Sorrir e chorar e ter alguém pra compartilhar / sempre / viver para alguém que me ama e dividir / sempre / felicidade e amor</p>
+      <div class="player-bar-row">
+        <span class="player-time">1:14</span>
+        <div class="player-bar"><div class="player-bar-fill" style="width:34%"></div><div class="player-bar-dot" style="left:34%"></div></div>
+        <span class="player-time">3:32</span>
+      </div>
+      <div class="player-controls">
+        <button class="ctrl-btn" aria-label="Anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+        <button class="ctrl-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <button class="ctrl-btn" aria-label="Próxima"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-8.14L11.03 12 8 14.14V9.86zM16 6h2v12h-2z"/></svg></button>
+      </div>
+      <p class="player-rank">1° lugar ✦</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="player-card">
+      <div class="player-top">
+        <div class="player-cover">♪</div>
+        <div class="player-meta">
+          <p class="player-title">Piloto</p>
+          <p class="player-artist">João Gomes</p>
+        </div>
+        <span class="player-heart">♥</span>
+      </div>
+      <p class="player-lyric">Se for pra ser, acho que demorou / minha nave voa por tanto lugar / seu coração é meu aeroporto / pra viajar tem que passar por lá</p>
+      <div class="player-bar-row">
+        <span class="player-time">0:52</span>
+        <div class="player-bar"><div class="player-bar-fill" style="width:20%"></div><div class="player-bar-dot" style="left:20%"></div></div>
+        <span class="player-time">4:18</span>
+      </div>
+      <div class="player-controls">
+        <button class="ctrl-btn" aria-label="Anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+        <button class="ctrl-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <button class="ctrl-btn" aria-label="Próxima"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-8.14L11.03 12 8 14.14V9.86zM16 6h2v12h-2z"/></svg></button>
+      </div>
+      <p class="player-rank">2° lugar ✦</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="player-card">
+      <div class="player-top">
+        <div class="player-cover">♪</div>
+        <div class="player-meta">
+          <p class="player-title">Gone, Gone, Gone</p>
+          <p class="player-artist">Phillip Phillips</p>
+        </div>
+        <span class="player-heart">♥</span>
+      </div>
+      <p class="player-lyric">Eu estarei à sua porta esta noite / se você precisar de ajuda / vou mentir, enganar, vou implorar e subornar / para te deixar bem</p>
+      <div class="player-bar-row">
+        <span class="player-time">2:05</span>
+        <div class="player-bar"><div class="player-bar-fill" style="width:56%"></div><div class="player-bar-dot" style="left:56%"></div></div>
+        <span class="player-time">3:43</span>
+      </div>
+      <div class="player-controls">
+        <button class="ctrl-btn" aria-label="Anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+        <button class="ctrl-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <button class="ctrl-btn" aria-label="Próxima"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-8.14L11.03 12 8 14.14V9.86zM16 6h2v12h-2z"/></svg></button>
+      </div>
+      <p class="player-rank">3° lugar ✦</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="player-card">
+      <div class="player-top">
+        <div class="player-cover">♪</div>
+        <div class="player-meta">
+          <p class="player-title">Feel It</p>
+          <p class="player-artist">d4vd</p>
+        </div>
+        <span class="player-heart">♥</span>
+      </div>
+      <p class="player-lyric">Mas não posso deixar você ir embora, então nem me faça começar agora / eu quero um sim, não quero incertezas / não vá embora / eu simplesmente amo o jeito que você me faz sentir</p>
+      <div class="player-bar-row">
+        <span class="player-time">1:33</span>
+        <div class="player-bar"><div class="player-bar-fill" style="width:44%"></div><div class="player-bar-dot" style="left:44%"></div></div>
+        <span class="player-time">3:28</span>
+      </div>
+      <div class="player-controls">
+        <button class="ctrl-btn" aria-label="Anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+        <button class="ctrl-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <button class="ctrl-btn" aria-label="Próxima"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-8.14L11.03 12 8 14.14V9.86zM16 6h2v12h-2z"/></svg></button>
+      </div>
+      <p class="player-rank">4° lugar ✦</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="player-card">
+      <div class="player-top">
+        <div class="player-cover">♪</div>
+        <div class="player-meta">
+          <p class="player-title">Miau Miau Miau</p>
+          <p class="player-artist">Jennifer Pontes</p>
+        </div>
+        <span class="player-heart">♥</span>
+      </div>
+      <p class="player-lyric">Miau miau miau miau / miau miau miau miau miaaau</p>
+      <div class="player-bar-row">
+        <span class="player-time">0:07</span>
+        <div class="player-bar"><div class="player-bar-fill" style="width:62%"></div><div class="player-bar-dot" style="left:62%"></div></div>
+        <span class="player-time">0:11</span>
+      </div>
+      <div class="player-controls">
+        <button class="ctrl-btn" aria-label="Anterior"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+        <button class="ctrl-btn play" aria-label="Play"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <button class="ctrl-btn" aria-label="Próxima"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-8.14L11.03 12 8 14.14V9.86zM16 6h2v12h-2z"/></svg></button>
+      </div>
+      <p class="player-rank">5° lugar ✦</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ✦ MENSAGEM 2 ✦ -->
+<section class="messages-section">
+  <div class="message-card">
+    <p class="message-text">Obrigado por todos os momentos, todas as risadas altas, os roncos e qualquer outra coisa que tenha escolhido dividir comigo, é realmente um privilégio dividir a vida contigo.</p>
+  </div>
+</section>
+
+
+<!-- ✦ FILMES ✦ -->
+<section style="background: #fff2f5; border-radius: 32px; max-width: 100%; padding: 5rem 1.5rem;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <p class="section-label">Sessão de cinema</p>
+    <h2 class="section-title">Nossos filmes</h2>
+    <div class="section-divider"></div>
+    <div class="movies-grid" id="movies-grid"></div>
+  </div>
+</section>
+
+<script>
+const MOVIES = [
+  { title: "Twister",                   search: "Twister 1996",              rating: "8,5/10" },
+  { title: "Bee Movie",                 search: "Bee Movie 2007",             rating: "7/10"   },
+  { title: "Truque de Mestre",          search: "Now You See Me 2013",        rating: "9,5/10" },
+  { title: "Truque de Mestre 2",        search: "Now You See Me 2 2016",      rating: "8/10"   },
+  { title: "Truque de Mestre 3",        search: "Now You See Me 3 2025",      rating: "7/10"   },
+  { title: "Running Man",               search: "The Running Man 1987",       rating: "8/10"   },
+  { title: "Jogos Vorazes",             search: "The Hunger Games 2012",      rating: "8/10"   },
+  { title: "Jerry Maguire",             search: "Jerry Maguire 1996",         rating: "9/10"   },
+  { title: "Pisque Duas Vezes",         search: "Blink Twice 2024",           rating: "8/10"   },
+  { title: "O Aprendiz de Feiticeiro",  search: "The Sorcerer's Apprentice 2010", rating: "8,5/10" },
+  { title: "O Menu",                    search: "The Menu 2022",              rating: "9/10"   },
+  { title: "Sem Limites",               search: "Limitless 2011",             rating: "9/10"   },
+  { title: "Um Lugar Silencioso",       search: "A Quiet Place 2018",         rating: "9/10"   },
+  { title: "Um Lugar Silencioso II",    search: "A Quiet Place Part II 2021", rating: "8,5/10" },
+  { title: "Querido John",              search: "Dear John 2010",             rating: "9,5/10" },
+  { title: "Uma Segunda Chance",        search: "The Longest Ride 2015",      rating: "9/10"   },
+  { title: "Simplesmente Acontece",     search: "The Spectacular Now 2013",   rating: "9/10"   },
+  { title: "Zathura",                   search: "Zathura A Space Adventure 2005", rating: "10/10" },
+  { title: "Ela é o Cara",              search: "She's the Man 2006",         rating: "8/10"   },
+  { title: "Ela Dança eu Danço",        search: "Save the Last Dance 2001",   rating: "9/10"   },
+  { title: "É o Fim",                   search: "This Is the End 2013",       rating: "8/10"   },
+  { title: "Os Novatos",                search: "The Internship 2013",        rating: "9/10"   },
+  { title: "Lego: Batman",              search: "The Lego Batman Movie 2017", rating: "10/10"  },
+  { title: "Palmer",                    search: "Palmer 2021",                rating: "8,5/10" },
+  { title: "Minority Report",           search: "Minority Report 2002",       rating: "8,5/10" },
+];
+
+const TMDB_KEY = "2dca580c2a14b55200e784d157207b4d";
+const IMG_BASE = "https://image.tmdb.org/t/p/w342";
+
+const grid = document.getElementById("movies-grid");
+
+const placeholderSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M17 7h5M2 17h5M17 17h5"/></svg>`;
+
+MOVIES.forEach(movie => {
+  const card = document.createElement("div");
+  card.className = "movie-card";
+  card.innerHTML = `
+    <div class="movie-poster">${placeholderSVG}</div>
+    <div class="movie-info">
+      <p class="movie-title">${movie.title}</p>
+      <span class="movie-rating">★ ${movie.rating}</span>
+    </div>`;
+  grid.appendChild(card);
+
+  fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(movie.search)}&language=pt-BR`)
+    .then(r => r.json())
+    .then(data => {
+      const poster = data.results?.[0]?.poster_path;
+      if (poster) {
+        const posterDiv = card.querySelector(".movie-poster");
+        const img = document.createElement("img");
+        img.src = IMG_BASE + poster;
+        img.alt = movie.title;
+        img.loading = "lazy";
+        posterDiv.appendChild(img);
+      }
+    })
+    .catch(() => {});
+});
+</script>
+
+
+<!-- ✦ MENSAGEM 3 ✦ -->
+<section class="messages-section">
+  <div class="message-card">
+    <p class="message-text">Espero sinceramente que esse seja o primeiro presente de Dia dos Namorados que eu te dou (aproveita, porque vai ser minha namorada por pouco tempo), e que você me dê a honra de continuar sendo seu parceiro.<br><br>Eu te amo.<br>Obrigado por ser minha vida além da caverna.</p>
+  </div>
+</section>
+
+
+<!-- ✦ FOOTER ✦ -->
+<footer>
+  Com todo o meu amor.
+  <span>Feliz Dia dos Namorados ♡</span>
+</footer>
+
+<script>
+  /* ── SENHA ── */
+  function checkPassword() {
+    const input = document.getElementById('password-input');
+    if (input.value === '18042026') {
+      document.getElementById('password-screen').classList.add('hidden');
+      document.body.style.overflow = '';
+    } else {
+      input.classList.add('error');
+      input.value = '';
+      setTimeout(() => input.classList.remove('error'), 500);
+    }
+  }
+
+  document.getElementById('password-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') checkPassword();
+  });
+
+  document.body.style.overflow = 'hidden';
+
+  /* ── CONTADOR ── */
+  const start = new Date('2026-04-18T00:00:00');
+  const today = new Date();
+  const days = Math.floor((today - start) / (1000 * 60 * 60 * 24));
+  document.getElementById('days-count').textContent = days;
+
+  /* ── LIGHTBOX ── */
+  document.querySelectorAll('.photo-slot').forEach(slot => {
+    slot.addEventListener('click', () => {
+      const img = slot.querySelector('img');
+      if (!img) return;
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body>
+</html>
